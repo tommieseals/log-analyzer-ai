@@ -1,0 +1,34 @@
+2024-01-15T08:00:00.000Z [INFO] Application starting...
+2024-01-15T08:00:00.100Z [INFO] Loading configuration from /etc/app/config.yaml
+2024-01-15T08:00:00.150Z [INFO] Configuration loaded successfully
+2024-01-15T08:00:00.200Z [INFO] Connecting to database: postgres://db.internal:5432/app
+2024-01-15T08:00:00.500Z [INFO] Database connection established
+2024-01-15T08:00:00.600Z [INFO] Initializing Redis cache: redis://cache.internal:6379
+2024-01-15T08:00:00.700Z [INFO] Redis connection established
+2024-01-15T08:00:00.800Z [INFO] Starting HTTP server on :8080
+2024-01-15T08:00:01.000Z [INFO] Application ready to serve requests
+2024-01-15T08:05:00.123Z [DEBUG] Request received: GET /api/users from 192.168.1.100
+2024-01-15T08:05:00.145Z [DEBUG] Database query executed in 22ms
+2024-01-15T08:05:00.150Z [INFO] Response sent: 200 OK (27ms)
+2024-01-15T08:10:00.234Z [WARNING] Slow database query detected: 1523ms for SELECT * FROM orders
+2024-01-15T08:10:00.240Z [DEBUG] Query plan: Sequential Scan on orders (cost=0.00..15234.00)
+2024-01-15T08:15:00.345Z [ERROR] Failed to process payment: Card declined (code: CARD_DECLINED)
+2024-01-15T08:15:00.346Z [ERROR] Stack trace:
+2024-01-15T08:15:00.346Z [ERROR]   at PaymentService.processPayment (payment.js:45)
+2024-01-15T08:15:00.346Z [ERROR]   at OrderController.createOrder (order.js:123)
+2024-01-15T08:15:00.346Z [ERROR]   at Router.handle (router.js:89)
+2024-01-15T08:20:00.456Z [INFO] Scheduled job started: cleanup_old_sessions
+2024-01-15T08:20:05.567Z [INFO] Cleanup completed: removed 1,234 expired sessions
+2024-01-15T08:25:00.678Z [WARNING] Memory usage high: 85% of allocated heap
+2024-01-15T08:25:00.679Z [INFO] Triggering garbage collection
+2024-01-15T08:25:01.000Z [INFO] GC completed: freed 512MB
+2024-01-15T08:30:00.789Z [ERROR] Connection to Redis lost: ECONNRESET
+2024-01-15T08:30:00.790Z [WARNING] Falling back to local cache
+2024-01-15T08:30:05.890Z [INFO] Reconnected to Redis successfully
+2024-01-15T08:35:00.901Z [CRITICAL] Database connection pool exhausted!
+2024-01-15T08:35:00.902Z [CRITICAL] All 100 connections in use, 50 requests waiting
+2024-01-15T08:35:01.000Z [ERROR] Request timeout: GET /api/products after 30000ms
+2024-01-15T08:35:05.012Z [INFO] Connection pool recovered: 45 connections available
+2024-01-15T08:40:00.123Z [INFO] Health check passed
+2024-01-15T08:45:00.234Z [DEBUG] Cache hit ratio: 92.3%
+2024-01-15T08:50:00.345Z [INFO] Metrics exported to Prometheus

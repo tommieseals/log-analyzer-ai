@@ -1,0 +1,32 @@
+Jan 15 08:00:01 webserver systemd[1]: Starting Daily apt download activities...
+Jan 15 08:00:01 webserver systemd[1]: Started Daily apt download activities.
+Jan 15 08:15:23 webserver sshd[12543]: Accepted publickey for admin from 10.0.0.5 port 52341 ssh2
+Jan 15 08:15:23 webserver sshd[12543]: pam_unix(sshd:session): session opened for user admin
+Jan 15 08:30:00 webserver CRON[12678]: (root) CMD (/usr/local/bin/backup.sh)
+Jan 15 08:30:05 webserver backup.sh[12679]: INFO: Starting daily backup
+Jan 15 08:30:15 webserver backup.sh[12679]: INFO: Backing up /var/www to /backup/www
+Jan 15 08:31:00 webserver backup.sh[12679]: INFO: Backup completed successfully
+Jan 15 09:00:00 webserver nginx[1234]: 192.168.1.100 - - "GET /api/health HTTP/1.1" 200 
+Jan 15 09:05:12 webserver sshd[12890]: Failed password for invalid user root from 45.33.32.156 port 22
+Jan 15 09:05:15 webserver sshd[12891]: Failed password for invalid user admin from 45.33.32.156 port 22
+Jan 15 09:05:18 webserver sshd[12892]: Failed password for invalid user test from 45.33.32.156 port 22
+Jan 15 09:05:21 webserver sshd[12893]: Failed password for invalid user guest from 45.33.32.156 port 22
+Jan 15 09:10:00 webserver kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.33.32.156 DST=10.0.0.1 PROTO=TCP
+Jan 15 09:15:33 webserver nginx[1234]: ERROR: upstream timed out (110: Connection timed out)
+Jan 15 09:15:34 webserver app[5678]: WARNING: Database connection slow (2.3s response time)
+Jan 15 09:16:00 webserver app[5678]: ERROR: Failed to connect to database: Connection refused
+Jan 15 09:16:01 webserver app[5678]: CRITICAL: Service health check failed
+Jan 15 09:16:05 webserver systemd[1]: app.service: Main process exited, code=exited, status=1/FAILURE
+Jan 15 09:16:05 webserver systemd[1]: app.service: Failed with result 'exit-code'.
+Jan 15 09:16:10 webserver systemd[1]: app.service: Scheduled restart job, restart counter is at 1.
+Jan 15 09:16:10 webserver systemd[1]: Starting Application Server...
+Jan 15 09:16:15 webserver app[5700]: INFO: Application starting up
+Jan 15 09:16:20 webserver app[5700]: INFO: Connected to database successfully
+Jan 15 09:16:20 webserver app[5700]: INFO: Application ready, listening on port 8080
+Jan 15 09:30:00 webserver CRON[13000]: (www-data) CMD (php /var/www/app/cron/cleanup.php)
+Jan 15 09:45:00 webserver nginx[1234]: 10.0.0.50 - - "POST /api/users HTTP/1.1" 201
+Jan 15 10:00:00 webserver nginx[1234]: 10.0.0.51 - - "GET /api/users HTTP/1.1" 200
+Jan 15 10:15:00 webserver app[5700]: DEBUG: Cache hit ratio: 94.5%
+Jan 15 10:30:00 webserver kernel: Out of memory: Killed process 5700 (app)
+Jan 15 10:30:01 webserver systemd[1]: app.service: Main process exited, code=killed, signal=KILL
+Jan 15 10:30:01 webserver systemd[1]: app.service: Failed with result 'signal'.
