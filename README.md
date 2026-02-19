@@ -1,5 +1,7 @@
 # 🔍 log-analyzer-ai
 
+[![CI](https://github.com/tommieseals/log-analyzer-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/tommieseals/log-analyzer-ai/actions/workflows/ci.yml)
+
 **AI-powered log analysis using local LLMs** — Transform your logs into actionable insights with natural language queries.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
